@@ -1,0 +1,6 @@
+intelmetool.o: intelmetool.c intelmetool.h me.h mmap.h msr.h rcba.h
+me.o: me.c intelmetool.h me.h mmap.h
+me_status.o: me_status.c me.h
+mmap.o: mmap.c mmap.h
+msr.o: msr.c msr.h
+rcba.o: rcba.c intelmetool.h mmap.h rcba.h
