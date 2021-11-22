@@ -220,7 +220,7 @@ static struct pci_dev *pci_me_interface_scan(const char **name, char *namebuf,
                                              int namebuf_size)
 {
 	struct pci_access *pacc;
-	struct pci_dev *dev;
+	struct pci_dev *dev, *result;
 	int me = 0;
 
 	pacc = pci_alloc();
@@ -240,7 +240,7 @@ static struct pci_dev *pci_me_interface_scan(const char **name, char *namebuf,
 
 		if (PCI_DEV_HAS_SUPPORTED_ME(dev->device_id)) {
 			me = 1;
-			break;
+            result = dev;
 		}
 	}
 
@@ -251,7 +251,7 @@ static struct pci_dev *pci_me_interface_scan(const char **name, char *namebuf,
 		return NULL;
 	}
 
-	return dev;
+	return result;
 }
 
 static void dump_me_info(void)
