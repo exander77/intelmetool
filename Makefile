@@ -41,6 +41,11 @@ distclean: clean
 dep:
 	@$(CC) $(CFLAGS) -MM *.c > .dependencies
 
+ids:
+	echo "#define PCI_DEV_HAS_SUPPORTED_ME_FROM_KERNEL(x) ( \\\\" > mei-ids-check.h
+	cat mei-ids.h 	  | grep "#define MEI_" | sed "s/#define \([^ ]*\) .*$$/    ((x) ==  \1) || \\\\/" >> mei-ids-check.h
+	echo "0)" >> mei-ids-check.h
+
 define LIBPCI_TEST
 /* Avoid a failing test due to libpci header symbol shadowing breakage */
 #define index shadow_workaround_index

@@ -238,7 +238,7 @@ static struct pci_dev *pci_me_interface_scan(const char **name, char *namebuf,
 			continue;
 		printf("0x%04x %s\n", dev->device_id, *name);
 
-		if (PCI_DEV_HAS_SUPPORTED_ME(dev->device_id)) {
+		if (PCI_DEV_HAS_SUPPORTED_ME(dev->device_id) || PCI_DEV_HAS_SUPPORTED_ME_FROM_KERNEL(dev->device_id)) {
 			me = 1;
             result = dev;
 		}

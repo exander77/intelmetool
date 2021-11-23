@@ -1,6 +1,7 @@
-intelmetool.o: intelmetool.c intelmetool.h me.h mmap.h msr.h rcba.h
-me.o: me.c intelmetool.h me.h mmap.h
+intelmetool.o: intelmetool.c intelmetool.h mei-ids.h mei-ids-check.h me.h \
+ mmap.h msr.h rcba.h
+me.o: me.c intelmetool.h mei-ids.h mei-ids-check.h me.h mmap.h
 me_status.o: me_status.c me.h
 mmap.o: mmap.c mmap.h
 msr.o: msr.c msr.h
-rcba.o: rcba.c intelmetool.h mmap.h rcba.h
+rcba.o: rcba.c intelmetool.h mei-ids.h mei-ids-check.h mmap.h rcba.h

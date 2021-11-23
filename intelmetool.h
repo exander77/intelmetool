@@ -494,3 +494,6 @@ extern int debug;
 	((x) ==  PCI_DEVICE_ID_INTEL_CANNONLAKE) || \
 	((x) ==  PCI_DEVICE_ID_INTEL_COMETLAKE) || \
 	0)
+
+#include "mei-ids.h"
+#include "mei-ids-check.h"
